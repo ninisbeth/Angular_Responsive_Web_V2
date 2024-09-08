@@ -1,3 +1,4 @@
+Responsive web using angular like final task for ther course in Coursera
 # AngularWebApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
