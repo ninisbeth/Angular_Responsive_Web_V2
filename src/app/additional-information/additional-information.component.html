@@ -1,0 +1,41 @@
+<form [formGroup]="childForm" (ngSubmit)="submitChildForm()">
+  <div>
+    <label for="color">Color de estilo:</label>
+    <input type="color" id="color" formControlName="color" (ngModelChange)="onColorChange($event)" />
+  </div>
+
+  <div>
+    <label for="hobby">Deporte <span class="required">*</span>:</label>
+    <input type="text" id="hobby" formControlName="hobby" />
+    <div *ngIf="childForm.get('hobby')?.invalid && (childForm.get('hobby')?.dirty || childForm.get('hobby')?.touched)" class="error-message">
+      Sport is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="inicio">Hora de inicio <span class="required">*</span>:</label>
+    <input type="datetime-local" id="inicio" formControlName="inicio" />
+    <div *ngIf="childForm.get('inicio')?.invalid && (childForm.get('inicio')?.dirty || childForm.get('inicio')?.touched)" class="error-message">
+      Start time is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="fin">Hora de finalización <span class="required">*</span>:</label>
+    <input type="datetime-local" id="fin" formControlName="fin" />
+    <div *ngIf="childForm.get('fin')?.invalid && (childForm.get('fin')?.dirty || childForm.get('fin')?.touched)" class="error-message">
+      End time is required.
+    </div>
+  </div>
+
+  <div>
+    <label for="linkedin">Linkedin <span class="required">*</span>:</label>
+    <input type="url" id="linkedin" formControlName="linkedin" />
+    <div *ngIf="childForm.get('linkedin')?.invalid && (childForm.get('linkedin')?.dirty || childForm.get('linkedin')?.touched)" class="error-message">
+      Linkedin URL is required.
+    </div>
+  </div>
+
+  <!-- Desactiva el botón si el formulario es inválido -->
+  <button type="submit" [disabled]="!childForm.valid || childFormSubmitted">Guardar</button>
+</form>

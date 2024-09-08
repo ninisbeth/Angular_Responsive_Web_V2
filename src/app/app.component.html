@@ -1,0 +1,56 @@
+<div>
+  <h2>Registro de nuevo miembro al Sport Club</h2>
+  <form [formGroup]="myParentForm" (ngSubmit)="submitParentForm()">
+    <div>
+      <label for="name">Name <span class="required">*</span>:</label>
+      <input type="text" id="name" formControlName="name" />
+      <div *ngIf="myParentForm.get('name')?.invalid && (myParentForm.get('name')?.dirty || myParentForm.get('name')?.touched)" class="error-message">
+        Name is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email <span class="required">*</span>:</label>
+      <input type="email" id="email" formControlName="email" />
+      <div *ngIf="myParentForm.get('email')?.invalid && (myParentForm.get('email')?.dirty || myParentForm.get('email')?.touched)" class="error-message">
+        Valid email is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="tel">Teléfono <span class="required">*</span>:</label>
+      <input type="number" id="tel" formControlName="tel" />
+      <div *ngIf="myParentForm.get('tel')?.invalid && (myParentForm.get('tel')?.dirty || myParentForm.get('tel')?.touched)" class="error-message">
+        Phone number is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="number">Número de acompañantes <span class="required">*</span>:</label>
+      <input type="number" id="number" formControlName="number" />
+      <div *ngIf="myParentForm.get('number')?.invalid && (myParentForm.get('number')?.dirty || myParentForm.get('number')?.touched)" class="error-message">
+        Number of companions is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Contraseña <span class="required">*</span>:</label>
+      <input type="password" id="password" formControlName="password" />
+      <div *ngIf="myParentForm.get('password')?.invalid && (myParentForm.get('password')?.dirty || myParentForm.get('password')?.touched)" class="error-message">
+        Password is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="file">Comprobante de pago:</label>
+      <input type="file" id="file" (change)="onFileChange($event)" />
+    </div>
+
+    <app-additional-information
+      *ngIf="fileSelected"
+      (colorChange)="changeBackgroundColor($event)"
+      class="expanded-info">
+    </app-additional-information>
+ 
+  </form>
+</div>

@@ -1,0 +1,104 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altura completa de la ventana */
+  margin: 0; /* Quitar márgenes predeterminados */
+  background-size: cover; /* Ajustar el tamaño de la imagen al área del cuerpo */
+  background-repeat: no-repeat; /* No repetir la imagen de fondo */
+  background-position: center; /* Centrar la imagen de fondo */
+}
+
+/* Contenedor principal que centra todo */
+.main-container {
+  width: 80%; /* Ancho del contenedor */
+  max-width: 600px; /* Máximo ancho para pantallas grandes */
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espacio interior */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+/* Ajustes para centrar el formulario */
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="number"],
+  form input[type="password"],
+  form input[type="file"],
+  form input[type="color"],
+  form input[type="datetime"],
+  form input[type="url"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form button[type="submit"] {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:disabled {
+    background-color: #cccccc;
+  }
+
+  .success-message {
+    background-color: #d4edda; /* Color de fondo verde claro para éxito */
+    color: #155724; /* Color del texto verde oscuro para mejor legibilidad */
+    border: 1px solid #c3e6cb; /* Borde verde claro */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    padding: 1rem; /* Espaciado interno */
+    margin: 1rem 0; /* Margen arriba y abajo */
+    font-size: 1.25rem; /* Tamaño de fuente más grande */
+    text-align: center; /* Alineación del texto al centro */
+    animation: fadeIn 1s; /* Animación de aparición */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .expanded-info {
+    width: 100%; /* Hacer que el componente ocupe todo el ancho disponible */
+    margin-top: 1rem; /* Margen superior para separarlo del mensaje de éxito */
+    padding: 1rem; /* Espaciado interno */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño del componente */
+  }
+  
+  .required {
+    color: red; /* Color rojo para indicar que el campo es obligatorio */
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem; /* Tamaño de fuente pequeño para los mensajes de error */
+    margin-top: 0.25rem; /* Espacio arriba del mensaje de error */
+  }
+  
